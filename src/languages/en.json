@@ -1,0 +1,292 @@
+{
+  "arabic":"Arabic",
+  "english":"English",
+  "ar":"Ar",
+  "en":"En",
+  "sorry_something_went_wrong":"Sorry something went wrong",
+  "partner_application":"PARTNER APPLICATION",
+  "error":"Error",
+
+  //Login Home
+  "enter_your_mobile_number":"Enter Your Mobile Number",
+  "enter_your_password":"Enter your OTP",
+
+  //Bottom navigation menu
+  "home":"Home",
+  "bookings":"Bookings",
+  "shot_booking":"Shot Booking",
+  "earnings":"Earnings",
+  "notifications":"Notifications",
+  "more":"More",
+
+
+  //BookingRequest
+  "hi_new_booking_arrivd":"Hi, New booking arrived !",
+  "pickup_location":"Pickup location",
+  "drop_location":"Drop location",
+  "estimated_fare":"Estimated fare",
+
+  //Bookings
+  "my_ride":"My Rides",
+  "no_ride_found":"No Ride Found",
+
+  
+
+
+  //chat
+  "chat_to":"Chat to",
+
+  //Direct Booking
+  "spot_booking":"Spot Booking",
+  "search":"Search",
+  "customer_details":"Customer Details",
+  "customer_name":"Customer Name",
+  "trip_fare":"Trip Fare",
+  "send_otp":"Send OTP",
+  "so_we_can_let_our_app_be_even_more_awesome.":"so we can let our app be even more awesome.",
+  "please_select_pickup_location":"Please select pickup location",
+  "please_select_drop_location":"Please select drop location",
+  "please_enter_customer_details":"Please enter customer details",
+  "please_enter_valid_otp":"Please enter valid otp",
+  "verification":"Verification",
+  "enter_OTP":"Enter OTP",
+  "OTP":"OTP",
+  "submit":"SUBMIT",
+  "cancel":"CANCEL",
+
+  //Document
+  "document":"Documents",
+  "vehicle_image":"Vehicle Image",
+  "updated_successfully":"Updated Successfully",
+  "error_on_while_uploading_try_again":"Error on while uploading,Try again",
+  "vehicle_certificate":"Vehicle Certificate",
+  "vehicle_insurance":"Vehicle Insurance",
+
+  //Driver registration
+  "registration":"Registration",
+  "first_name":"First name",
+  "last_name":"Last name",
+  "email_id":"Email id",
+  "licence_number":"Licence number",
+  "password":"Password",
+  "gender":"Gender",
+  "male":"Male",
+  "female":"Female",
+  "select_date_of_birth":"Select Date of Birth",
+  "please_fill_all_fields":"Please fill all fields",
+  "success":"Success",
+  "your_registration_is_successfully_completed":"Your registration is successfully completed.",
+  "ok":"Ok",
+  "zones":"Zones",
+
+  //Duty
+  "off_duty":"Off Duty",
+  "on_duty":"On Duty",
+  "bookings_count":"Bookings Count",
+  "ride_earnings":"Ride Earnings",
+  "We_needs_to_Access_your_location_for_tracking":"We will track your location in background when the app is closed or not in use.",
+  "sorry_cannot_fetch_your_location":"Sorry, cannot fetch your location",
+  "app_needs_to_access_your_location":"App Access your location for tracking in background",
+
+  //Earnings
+  "earnings_list_is_empty":"Earnings is List Emmpty",
+  "total_earnings":"Total Earnings",
+  "today_earnings":"Today Earnings",
+  "trip_id":"Trip Id",
+
+  //Edit email
+  "edit_your_email":"Edit your email",
+  "update":"Update",
+  
+
+
+  //Edit first name
+  "edit_your_first_name":"Edit your first name",
+  "john":"John",
+
+
+  //Edit your last name
+  "edit_your_last_name":"Edit your last name",
+  "williams":"Williams",
+  
+
+  //Edit your password
+  "edit_your_password":"Edit your password",
+  "password":"Password",
+  
+
+  //Edit your phone number
+  "edit_your_phone_number":"Edit your phone number",
+  "please_enter_phone_number":"Please enter phone number",
+  "please_enter_valid_phone_number":"Please enter valid phone number",
+
+  //Faq
+  "faq":"Faq",
+
+  //Forgot
+  "forgot_password":"Forgot password",
+  "please_enter_your_phone_number":"Please enter your phone number",
+  "you_need_to_enter_your_phone_number_to_reset_the_password":"You need to enter your phone number to reset the password",
+  "please_enter_your_registered_mobile_number":"Please enter your registered mobile number",
+
+
+  //Forgot otp
+  "please_enter_OTP":"Please enter OTP",
+  "resend_otp":"Resend OTP",
+  "resend_code_in":"Resend code in ",
+  "enter_the_code_you_have_received_by_SMS_for_reset_your_password":"Enter the code you have received by SMS for reset your password.",
+
+  //KYC details
+  "bank_kyc_details":"Bank & KYC Details",
+  "bank_details":"Bank Details",
+  "bank_name":"Bank Name",
+  "bank_account_number":"Bank Account Number",
+  "ifsc_code":"IFSC code",
+  "by_submitting_you_agree":"By submitting, you agree",
+  "terms_and_services":"Terms and Services",
+  "details_updated_successfully":"Details updated successfully",
+  "KYC_update":"KYC Update",
+  "aadhar_number":"Aadhar Number",
+  "PAN_number":"PAN Number",
+
+  //Login
+  "phone_number":"Phone Number",
+  
+
+  //LoginHome
+  "your_bookings_from":"Your bookings from",
+
+  //Logout
+  "please_wait":"Please wait...",
+
+  //More & (constant.js)
+  "confirm":"Confirm",
+  "do_you_want_to_logout":"Do you want to logout?",
+  "yes":"Yes",
+  "no":"No",
+
+  "vehicle_document":"Vehicle Document",
+
+  "profile":"Profile",
+  "kyc_verification":"Kyc Verification",
+  "partner_care":"Faq",
+  "withdrawal":"Withdrawal",
+  "wallet_transactions":"Wallet Transactions",
+  "logout":"Logout", 
+
+  //Notification
+  "notification":"Notification",
+  "notification_list_is_empty":"Notification_List_is_Empty",
+
+
+
+  //Otp
+  "enter_the_code_you_have_received_by_SMS_in_order_to_verify_account":"Enter the code you have received by SMS for reset your password.",
+  
+  //Password
+  "forgot_your_password":"Forgot my password",
+  "please_enter_password":"Please enter password",
+
+  //Profile
+  "edit_phone_number":"Phone Number",
+  "email":"Email",
+  "edit_password":"Edit Password",
+  "successfully_updated":"Successfully updated",
+  
+
+  //Reset password
+  "reset_password":"Reset password",
+  "enter_your_new_password":"Enter your new password",
+  "password":"Password",
+  "confirm_Password":"Confirm Password",
+  "both_password_is_not_same":"Both passsword is not same",
+
+  //Training
+  "training":"Training",
+  "training_list_is_empty":"Training List is Empty",
+
+  //Training details
+  "training_details":"Training Details",
+
+  //trips
+  "on_trip":"On Trip",
+  "verification":"Verification",
+  "otp":"OTP",
+  "location_access_required":"collects location data to enable",
+  "needs_to_Access_your_location_for_tracking":"needs to Access your location for tracking",
+
+
+
+
+  //vehicle details
+  "vehicle_details":"Vehicle Details",
+  "vehicle_name":"Vehicle Name",
+  "enter_your_vehicle_name":"Enter your Vehicle Name",
+  "vehicle_brand":"Vehicle Brand",
+  "enter_your_vehicle_brand":"Enter your Vehicle Brand",
+  "vehicle_color":"Vehicle Color",
+  "enter_your_vehicle_color":"Enter your Vehicle Color",
+  "vehicle_number":"Vehicle Number",
+  "enter_your_vehicle_number":"Enter your Vehicle Number",  
+  "vehicle_type":"Vehicle Type",
+  
+  
+  
+  
+
+
+  //Wallet
+  "wallet":"Wallet",
+  "add_wallet":"Add Wallet",
+  "please_enter_your_amount_here":"Please enter your amount here",
+  "enter_amount":"Enter amount",
+  "add_money":"Add Money",
+  
+
+  //Withdrawal
+  "your_balance":"Your balance",
+  "withdrawal_histories":"Withdrawal histories",
+  "withdraw":"Withdraw",
+  "your_balance_is_low":"Your balance is low",
+  "your_current_wallet_balance":"Your Current wallet balance",
+  "do_you_want_to_withdraw":"Do you want to withdraw?",
+
+  //Ride details
+  "km":"km",
+  "min":"min",
+  "buill_details":"Bill details",
+  "fare":"Fare",
+  "taxes":"Taxes",
+  "discount":"Discount",
+  "total_bill":"Total bill",
+  "payment_mode":"Payment Mode",
+  "invoice":"Invoice",
+  "support":"Support",
+  "you_rated":"You Rated",
+  "tip_for_you":"Tip For You",
+
+  //Documents
+  "document":"Documents",
+
+  //documents
+  "waiting_for_upload":"Waiting For Upload",
+  "upload_your_documents":"Upload your documents",
+  "in_order_to_complete_your_registration_please_upload_following_documents":"In order to complete your registration please upload following documents.",
+  "id_proof":"ID Proof",
+  "make_sure_that_every_details_of_the_document_is_clearly_visible":"Make sure that every details of the document is clearly visible.",
+  "upload_your_passport_or_driving_licence_or_any_one_id_proof":"Upload your passport or driving licence or any one ID proof",
+  "certificate":"Certificate",
+  "upload_your_vehicle_registration_certificate":"Upload your vehicle registration certificate",
+  "please_wait_your_documents_are_under_verification":"Please wait your documents are under verification",
+  "upload_your_vehicle_insurance_document":"Upload your vehicle insurance document",
+  "upload_your_vehicle_image":"Upload your vehicle image",
+  "upload_your_vehicle_image_with_number_board":"Upload your vehicle image with number board",
+  "your_documents_are_uploaded_please_wait_admin_will_verify_your_documents":"Your documents are uploaded.Please wait admin will verify your documents.",
+
+  //document upload
+  "document_upload":"Document Upload",
+  "error_on_while_upload_try_again_later":"Error on while upload try again later.",
+  "Upload_File":"Upload File",
+  "Upload_your_file":"Upload your file"
+
+}

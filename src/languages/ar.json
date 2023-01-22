@@ -1,0 +1,303 @@
+{
+  "arabic":"عربي",
+  "english":"English",
+  "sorry_something_went_wrong":"عذرا، هناك خطأ ما",
+  "partner_application":"تطبيق الشريك",
+
+   //Login Home
+   "enter_your_mobile_number":"أدخل رقم هاتفك المحمول",
+   "enter_your_password":"ادخل رقمك السري",
+
+
+  //Bottom navigation menu
+  "home":"الصفحة الرئيسية",
+  "bookings":"الحجوزات",
+  "shot_booking":"الحجز الفوري",
+  "earnings":"أرباح",
+  "notifications":"إشعارات",
+  "more":"أكثر",
+
+  //BookingRequest
+  "hi_new_booking_arrivd":"مرحبًا ، وصل حجز جديد!",
+  "pickup_location":"اختر موقعا",
+  "drop_location":"إسقاط الموقع",
+  "estimated_fare":"الأجرة المقدرة",
+
+  //Bookings
+  "my_ride":"رحلاتي",
+  "no_ride_found":"لم يتم العثور على رحلة",
+  
+
+
+
+  //chat
+  "chat_to":"الدردشة مع",
+
+  //Direct Booking
+  "spot_booking":"الحجز الفوري",
+  "search":"بحث",
+  "customer_details":"تفاصيل العميل",
+  "customer_name":"اسم الزبون",
+  "phone_number":"رقم التليفون",
+  "trip_fare":"أجرة الرحلة",
+  "send_otp":"أرسل  رمز الرقم",
+  "so_we_can_let_our_app_be_even_more_awesome.":"حتى نتمكن من جعل تطبيقنا أكثر روعة.",
+  "please_select_pickup_location":"الرجاء تحديد موقع الالتقاط",
+  "please_select_drop_location":"الرجاء تحديد موقع الإفلات",
+  "please_enter_customer_details":"الرجاء إدخال تفاصيل العميل",
+  "please_enter_valid_otp":"الرجاء إدخال  رمز الرقم صالح",
+  "verification":"تحقق",
+  "enter_OTP":"أدخل رقم الكود",
+  "OTP":"رقم الكود",
+  "submit":"إرسال",
+  "cancel":"إلغاء",
+
+  //Document
+  "document":"وثيقة",
+  "vehicle_image":"صورة المركبة",
+  "updated_successfully":"تم التحديث بنجاح",
+  "error_on_while_uploading_try_again":"خطأ أثناء التحميل ، حاول مرة أخرى",
+  "vehicle_certificate":"شهادة المركبة",
+  "vehicle_insurance":"",
+
+  //Driver registration
+  "registration":"تسجيل",
+  "first_name":"الاسم الاول",
+  "last_name":"الكنية",
+  "email_id":"عنوان الايميل",
+  "licence_number":"رقم الرخصة",
+  "password":"كلمة المرور",
+  "gender":"جنس تذكير أو تأنيث",
+  "male":"ذكر",
+  "female":"أنثى",
+  "select_date_of_birth":"حدد تاريخ الميلاد",
+  "please_fill_all_fields":"لو سمحت أملأ كل الحقول",
+  "success":"نجاح",
+  "your_registration_is_successfully_completed":"تم تسجيلك بنجاح",
+  "ok":"موافق",
+  "zones":"المناطق",
+  //Duty
+  "off_duty":"خارج الخدمه",
+  "on_duty":"في الخدمة",
+  "bookings_count":"عدد الحجوزات",
+  "ride_earnings":"أرباح الركوب",
+  "We_needs_to_Access_your_location_for_tracking":"نحن بحاجة للوصول إلى موقعك للتتبع",
+  "sorry_cannot_fetch_your_location":"آسف ، لا يمكن إحضار موقعك",
+  "app_needs_to_access_your_location":"نحتاج إلى الوصول إلى موقعك للتتبع في الخلفية",
+
+  //Earnings
+  "earnings_list_is_empty":"قائمة الأرباح فارغة",
+  "total_earnings":"الأرباح الكلية",
+  "today_earnings":"أرباح اليوم",
+  "trip_id":"معرف الرحلة",
+
+
+
+  //Edit email
+  "edit_your_email":"تحرير البريد الإلكتروني الخاص بك",
+  "update":"تحديث",
+
+  //Edit first name
+  "edit_your_first_name":"قم بتحرير اسمك الأول",
+  "john":"يوحنا",
+  
+  
+
+
+  //Edit your last name
+  "edit_your_last_name":"قم بتحرير اسمك الأخير",
+  "williams":"وليامز",
+  
+
+  //Edit your password
+  "edit_your_password":"قم بتحرير كلمة المرور الخاصة بك",
+  
+  
+
+  //Edit your phone number
+  "edit_your_phone_number":"قم بتحرير رقم هاتفك",
+  "please_enter_phone_number":"الرجاء إدخال رقم الهاتف",
+  "please_enter_valid_phone_number":"الرجاء إدخال رقم هاتف صحيح",
+
+  //Faq
+  "faq":"التعليمات",
+
+  //Forgot
+  "forgot_password":"هل نسيت كلمة السر",
+  "please_enter_your_phone_number":"يرجى إدخال رقم الهاتف الخاص بك",
+  "phone_number":"رقم التليفون",
+  "you_need_to_enter_your_phone_number_to_reset_the_password":"تحتاج إلى إدخال رقم هاتفك لإعادة تعيين كلمة المرور",
+  "please_enter_your_registered_mobile_number":"الرجاء إدخال رقم هاتفك المحمول المسجل",
+
+
+//Forgot otp
+"resend_otp":"إعادة إرسال",
+"resend_code_in":"إعادة إرسال الرمز بتنسيق ",
+  "enter_the_code_you_have_received_by_SMS_for_reset_your_password":"أدخل الرمز الذي تلقيته عن طريق الرسائل القصيرة لإعادة تعيين كلمة المرور الخاصة بك.",
+
+  //KYC details
+  "bank_kyc_details":"تفاصيل البنك و اعرف عميلك",
+  "bank_details":"التفاصيل المصرفية",
+  "bank_name":"اسم البنك",
+  "bank_account_number":"رقم الحساب المصرفي",
+  "ifsc_code":"كود IFSC",
+  "by_submitting_you_agree":"من خلال التقديم ، أنت توافق",
+  "terms_and_services":"الشروط والخدمات",
+  "details_updated_successfully":"تم تحديث التفاصيل بنجاح",
+  "KYC_update":"تحديث اعرف عميلك",
+  "aadhar_number":"إثبات الهوية",
+  "PAN_number":"إثبات الهوية",
+
+  //Login
+  "enter_your_phone_number":"أدخل رقم هاتفك",
+  "phone_number":"رقم التليفون",
+
+  //LoginHome
+  "your_bookings_from":"حجوزاتك من",
+
+
+  //Logout
+  "please_wait":"انتظر من فضلك...",
+
+  //More & (constant.js)
+
+  "confirm":"يتأكد",
+  "do_you_want_to_logout":"هل ترغب بالخروج؟",
+  "yes":"نعم",
+  "no":"لا",
+
+  "vehicle_document":"وثيقة المركبة",
+  "profile":"حساب تعريفي",
+  "kyc_verification":"التحقق من",
+  "training":"تمرين",
+  "partner_care":"رعاية الشريك",
+  "withdrawal":"انسحاب",
+  "wallet_transactions":"معاملات المحفظة",
+  "logout":"تسجيل خروج",
+
+  //Notification
+  "notification":"تنبيه",
+  "notification_list_is_empty":"قائمة الإخطار فارغة",
+
+  //Otp
+  "please_enter_OTP":"الرجاء إدخال  رمز الرقم",
+  "enter_the_code_you_have_received_by_SMS_in_order_to_verify_account":"أدخل الرمز الذي تلقيته عن طريق الرسائل القصيرة لإعادة تعيين كلمة المرور الخاصة بك.",
+  
+  //Password
+  "forgot_your_password":"نسيت كلمة المرور الخاصة بي",
+  "please_enter_password":"الرجاء إدخال كلمة المرور",
+
+  //Profile
+  "edit_phone_number":"تعديل رقم الهاتف",
+  "email":"بريد الالكتروني",
+  "edit_password":"تحرير كلمة المرور",
+  "successfully_updated":"تم التحديث بنجاح",
+
+
+  //Reset password
+  "reset_password":"إعادة تعيين كلمة المرور",
+  "enter_your_new_password":"أدخل كلمة المرور الجديدة",
+  "password":"كلمة المرور",
+  "confirm_Password":"تأكيد كلمة المرور",
+  "both_password_is_not_same":"كلا كلمة المرور ليست هي نفسها",
+
+  //Training
+  "training_list_is_empty":"قائمة التدريب فارغة",
+
+  //Training details
+  "training_details":"تفاصيل التدريب",
+
+  //trips
+  "on_trip":"في رحلة",
+  "verification":"تحقق",
+  "otp":"رمز الرقم",
+  "location_access_required":"مطلوب الوصول إلى الموقع",
+  "needs_to_Access_your_location_for_tracking":"يحتاج إلى الوصول إلى موقعك للتتبع",
+
+
+
+  
+  //vehicle details
+  "vehicle_details":"تفاصيل السيارة",
+  "vehicle_name":"اسم المركبة",
+  "enter_your_vehicle_name":"أدخل اسم مركبتك",
+  "vehicle_brand":"ماركة السيارة",
+  "enter_your_vehicle_brand":"أدخل ماركة سيارتك",
+  "vehicle_color":"لون السيارة",
+  "enter_your_vehicle_color":"أدخل لون سيارتك",
+  "vehicle_number":"عدد المركبات",
+  "enter_your_vehicle_number":"أدخل رقم مركبتك", 
+  "vehicle_type":"نوع السيارة",
+  
+
+
+  
+
+
+  //Wallet
+  "wallet":"محفظة",
+  "add_wallet":"أضف المحفظة",
+  "please_enter_your_amount_here":"الرجاء إدخال المبلغ الخاص بك هنا",
+  "enter_amount":"أدخل المبلغ",
+  "add_money":"إضافة المال",
+  
+
+  //Withdrawal
+  "your_balance":"رصيدك",
+  "withdrawal_histories":"تاريخ الانسحاب",
+  "withdraw":"ينسحب",
+  "your_balance_is_low":"رصيدك منخفض",
+  "your_current_wallet_balance":"رصيد محفظتك الحالي",
+  "do_you_want_to_withdraw":"هل تريد الانسحاب؟",
+
+  
+
+  //Ride details
+  "km":"كم",
+  "min":"دقيقة",
+  "buill_details":"تفاصيل الفاتورة",
+  "fare":"أجرة",
+  "taxes":"الضرائب",
+  "discount":"خصم",
+  "total_bill":"إجمالي الفاتورة",
+  "payment_mode":"طريقة الدفع",
+  "invoice":"فاتورة",
+  "support":"الدعم",
+  "you_rated":"قمت بالتقييم",
+  "tip_for_you":"نصيحة لك",
+
+   //documents 
+  "document":"وثائق",
+
+   //documents
+   "waiting_for_upload":"في انتظار التحميل",
+   "upload_your_documents":"قم بتحميل المستندات الخاصة بك",
+   "in_order_to_complete_your_registration_please_upload_following_documents":"من أجل استكمال التسجيل ، يرجى تحميل المستندات التالية.",
+   "id_proof":"إثبات الهوية",
+   "make_sure_that_every_details_of_the_document_is_clearly_visible":"يرجى التأكد من أن كل تفاصيل المستند مرئية بوضوح.",
+   "upload_your_passport_or_driving_licence_or_any_one_id_proof":"يرجى تحميل جواز سفرك أو رخصة القيادة أو أي إثبات هوية واحد",
+   "certificate":"شهادة",
+   "upload_your_vehicle_registration_certificate":"يرجى تحميل شهادة تسجيل مركبتك",
+   "please_wait_your_documents_are_under_verification":"الرجاء الانتظار وثائقك قيد التحقق",
+   "upload_your_vehicle_insurance_document":"قم بتحميل وثيقة التأمين على مركبتك",
+   "upload_your_vehicle_image":"قم بتحميل صورة مركبتك",
+   "upload_your_vehicle_image_with_number_board":"تحميل صورة سيارتك مع لوحة الأرقام",
+   "your_documents_are_uploaded_please_wait_admin_will_verify_your_documents":"تم تحميل المستندات الخاصة بك. يرجى الانتظار سيتحقق المسؤول من مستنداتك.",
+
+   //document upload
+   "document_upload":"تحميل الوثيقة",
+   "Error_on_while_upload_try_again_later":"خطأ أثناء التحميل حاول مرة أخرى لاحقًا.",
+   "Upload_File":"رفع ملف",
+   "Upload_your_file":"قم بتحميل ملفك",
+
+
+
+
+
+
+
+
+
+
+
+}
