@@ -162,6 +162,9 @@ class BookingRequest extends Component<Props> {
             {this.state.pickup_address}
           </Text>
           <View style={{ margin: 10 }} />
+          <Text style={{ position: "absolute", top: 250, fontSize: 30 }}>
+            {global.driver_trip_time}
+          </Text>
           <CountdownCircleTimer
             isPlaying={this.state.isPlaying}
             duration={global.driver_trip_time}

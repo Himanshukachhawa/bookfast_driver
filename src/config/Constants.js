@@ -187,6 +187,11 @@ export const menus = [
     route: "Wallet",
   },
   {
+    menu_name: "Incentive",
+    icon: "money",
+    route: "Incentive",
+  },
+  {
     menu_name: "Notification",
     icon: "bell",
     route: "Notification",

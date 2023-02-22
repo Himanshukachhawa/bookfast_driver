@@ -39,6 +39,7 @@ export default class Duty extends Component<props> {
   constructor() {
     super();
     this.state = {
+      switch2Value: false,
       switch1Value: global.live_status == 1 ? true : false,
       isLoading: false,
       today_bookings: 0,
@@ -65,6 +66,13 @@ export default class Duty extends Component<props> {
     await this.get_location();
     this.booking_sync();
   }
+
+  toggleSwitch1 = (value) => {
+    this.setState({ switch2Value: value });
+
+    console.log("value", value);
+    this.status_change1(value ? 1 : 0);
+  };
 
   toggleSwitch = (value) => {
     if (value) {
@@ -108,6 +116,32 @@ export default class Duty extends Component<props> {
       });
   };
 
+  status_change1 = async (status) => {
+    this.setState({ isLoading: true });
+    await axios({
+      method: "post",
+      url: api_url + checkin,
+      data: {
+        id: global.id,
+        outstation_booking_status: status,
+        online_status: this.state.switch1Value ? 1 : 0,
+      },
+    })
+      .then(async (response) => {
+        console.log("checking", response?.data);
+        this.setState({ isLoading: false });
+        if (response.data.status == 0) {
+          alert(response.data.message);
+          this.setState({ switch2Value: false });
+
+          //this.saveData(0);
+        }
+      })
+      .catch((error) => {
+        console.log("error", error?.response);
+        this.setState({ isLoading: false });
+      });
+  };
   status_change = async (status) => {
     this.setState({ isLoading: true });
     await axios({
@@ -381,33 +415,77 @@ export default class Duty extends Component<props> {
                 this.get_header_bg(this.state.switch1Value),
               ]}
             >
-              <Text
+              <View
                 style={{
-                  fontSize: 14,
-                  color: colors.theme_fg_three,
-                  fontFamily: font_title,
+                  flexDirection: "row",
+                  paddingRight: 5,
+                  paddingLeft: 2,
                 }}
               >
-                {strings.off_duty}
-              </Text>
-              <View style={{ margin: 10 }} />
-              <Switch
-                trackColor={{ false: "#C0C0C0", true: "#fcdb00" }}
-                thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
-                ios_backgroundColor="#3e3e3e"
-                onValueChange={this.toggleSwitch}
-                value={this.state.switch1Value}
-              />
-              <View style={{ margin: 10 }} />
-              <Text
+                <Text
+                  style={{
+                    fontSize: 14,
+                    color: colors.theme_fg_three,
+                    fontFamily: font_title,
+                  }}
+                >
+                  {strings.off_duty}
+                </Text>
+                <View style={{ margin: 5 }} />
+                <Switch
+                  trackColor={{ false: "#C0C0C0", true: "#fcdb00" }}
+                  thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                  ios_backgroundColor="#3e3e3e"
+                  onValueChange={this.toggleSwitch}
+                  value={this.state.switch1Value}
+                />
+                <View style={{ margin: 5 }} />
+                <Text
+                  style={{
+                    fontSize: 14,
+                    color: "#FFFFFF",
+                    fontFamily: font_title,
+                  }}
+                >
+                  {strings.on_duty}
+                </Text>
+              </View>
+              <View
                 style={{
-                  fontSize: 14,
-                  color: "#FFFFFF",
-                  fontFamily: font_title,
+                  flexDirection: "row",
+                  paddingLeft: 5,
+                  borderLeftColor: "white",
+                  borderLeftWidth: 1,
                 }}
               >
-                {strings.on_duty}
-              </Text>
+                <Text
+                  style={{
+                    fontSize: 14,
+                    color: colors.theme_fg_three,
+                    fontFamily: font_title,
+                  }}
+                >
+                  {strings.intown}
+                </Text>
+                <View style={{ margin: 5 }} />
+                <Switch
+                  trackColor={{ false: "#C0C0C0", true: "#fcdb00" }}
+                  thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                  ios_backgroundColor="#3e3e3e"
+                  onValueChange={this.toggleSwitch1}
+                  value={this.state.switch2Value}
+                />
+                <View style={{ margin: 2 }} />
+                <Text
+                  style={{
+                    fontSize: 14,
+                    color: "#FFFFFF",
+                    fontFamily: font_title,
+                  }}
+                >
+                  {strings.outtown}
+                </Text>
+              </View>
               <View style={{ margin: 10 }} />
             </View>
             <View
@@ -444,6 +522,7 @@ export default class Duty extends Component<props> {
                   {this.state.today_bookings}
                 </Text>
               </View>
+
               <View
                 style={{
                   width: "50%",
@@ -452,6 +531,9 @@ export default class Duty extends Component<props> {
                 }}
               >
                 <Text
+                  onPress={() => {
+                    this.props.navigation.navigate("Bookings");
+                  }}
                   style={{
                     fontFamily: font_title,
                     fontSize: 16,
@@ -462,6 +544,9 @@ export default class Duty extends Component<props> {
                 </Text>
                 <View style={{ margin: 4 }} />
                 <Text
+                  onPress={() => {
+                    this.props.navigation.navigate("Bookings");
+                  }}
                   style={{
                     fontFamily: font_description,
                     fontSize: 15,
@@ -492,7 +577,7 @@ const styles = StyleSheet.create({
   header: {
     height: 50,
     alignItems: "center",
-    justifyContent: "center",
+
     flexDirection: "row",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,

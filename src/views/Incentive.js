@@ -46,7 +46,7 @@ import { PayWithFlutterwave } from "flutterwave-react-native";
 import { CreditCardInput } from "react-native-credit-card-input";
 import CardView from "react-native-cardview";
 
-class Wallet extends Component<Props> {
+class Incentive extends Component<Props> {
   constructor(props) {
     super(props);
     this.drawer = this.drawer.bind(this);
@@ -153,10 +153,11 @@ class Wallet extends Component<Props> {
     await axios({
       method: "post",
       url: api_url + wallet,
-      data: { id: global.id, lang: global.lang, type: "0" },
+      data: { id: global.id, lang: global.lang, type: "9" },
     })
       .then(async (response) => {
         this.setState({ isLoading: false });
+        console.log("response", response.data.result.wallet_amount);
         await this.setState({
           wallet_amount: response.data.result.wallet_amount,
           wallet_history: response.data.result.wallets,
@@ -164,7 +165,6 @@ class Wallet extends Component<Props> {
         global.wallet = response.data.result.wallet_amount;
       })
       .catch((error) => {
-        console.log("error", error?.response);
         this.setState({ isLoading: false });
         alert(strings.sorry_something_went_wrong);
       });
@@ -369,7 +369,7 @@ class Wallet extends Component<Props> {
               <Text style={styles.bal}>{strings.your_balance}</Text>
             </View>
 
-            <View
+            {/* <View
               style={{
                 width: "40%",
                 alignItems: "flex-end",
@@ -383,10 +383,10 @@ class Wallet extends Component<Props> {
                 buttonStyle={{ borderColor: colors.theme_fg_two }}
                 titleStyle={{ color: colors.theme_fg_two }}
               />
-            </View>
+            </View> */}
           </CardView>
           <View style={styles.margin_10} />
-          <Text style={styles.wal_trans}>{strings.wallet_transactions}</Text>
+          <Text style={styles.wal_trans}>Transactions</Text>
           <FlatList
             data={this.state.wallet_history}
             renderItem={({ item, index }) => (
@@ -611,7 +611,7 @@ const mapDispatchToProps = (dispatch) => ({
   walletSuccess: (data) => dispatch(walletSuccess(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
+export default connect(mapStateToProps, mapDispatchToProps)(Incentive);
 
 const styles = StyleSheet.create({
   bal_amt: {

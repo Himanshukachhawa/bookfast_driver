@@ -15,6 +15,8 @@ import {
   ScrollView,
 } from "react-native";
 import * as colors from "../assets/css/Colors";
+import StarRating from "react-native-star-rating";
+
 import {
   font_title,
   font_description,
@@ -59,6 +61,9 @@ class Trip extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
+      support_icon: "",
+      support_contact: "",
+      confiramtion_modal: false,
       trip_id: this.props.route.params.trip_id,
       customer_name: "",
       data: undefined,
@@ -151,7 +156,13 @@ class Trip extends Component<Props> {
       data: { trip_id: this.state.trip_id },
     })
       .then(async (response) => {
-        this.setState({ isLoading: false, data: response.data.result });
+        this.setState({
+          isLoading: false,
+          data: response.data.result,
+          support_icon: response?.data?.support[0]?.image,
+          support_contact: response?.data?.support[0]?.phone_number,
+          confiramtion_modal: response.data.result?.status == 4 ? true : false,
+        });
         console.log("Sssss", response);
         if (response.data.result.status == 5) {
           this.props.navigation.navigate("Rating", {
@@ -371,6 +382,26 @@ class Trip extends Component<Props> {
     this.setState({ isDialogVisible: false });
   };
 
+  status_changed = async (option) => {
+    this.setState({ isLoading: true, confiramtion_modal: false });
+    await axios({
+      method: "post",
+      url: api_url + status_change,
+      data: {
+        trip_id: this.state.trip_id,
+        option: option,
+      },
+    })
+      .then(async (response) => {
+        this.setState({ isLoading: false });
+        this.get_trip_details();
+      })
+      .catch((error) => {
+        alert(strings.sorry_something_went_wrong);
+        this.setState({ isLoading: false });
+      });
+  };
+
   status_change = async () => {
     console.log({
       trip_id: this.state.trip_id,
@@ -496,6 +527,10 @@ class Trip extends Component<Props> {
       customer_name: this.state.data.customer_name,
     });
   };
+
+  call_support(phone) {
+    Linking.openURL(`tel:${phone}`);
+  }
 
   call_customer(phone_number) {
     Linking.openURL(`tel:${phone_number}`);
@@ -763,6 +798,7 @@ class Trip extends Component<Props> {
                 </MapView>
               </View>
             )}
+
             {this.state.data.status == 4 && (
               <View style={{ margin: 20 }}>
                 <View
@@ -772,6 +808,7 @@ class Trip extends Component<Props> {
                     {global.currency}
                     {this.state.data.collection_amount}
                   </Text>
+
                   {global.lang == "en" ? (
                     <Text style={styles.payment_mode}>
                       {this.state.data.payment_method}
@@ -782,6 +819,18 @@ class Trip extends Component<Props> {
                     </Text>
                   )}
                   <View style={{ margin: 10 }} />
+                  <Text style={styles.date_time}>
+                    Traveling Kms : {this.state.data?.distance} Kms
+                  </Text>
+                  <Text style={styles.date_time}>
+                    Total timing : {this.state.data?.total_timeing}
+                  </Text>
+
+                  {this.state.data?.discount != 0 && (
+                    <Text style={styles.date_time}>
+                      Discount : {this.state.data?.discount} {global.currency}
+                    </Text>
+                  )}
                   <Text style={styles.date_time}>
                     {Moment(this.state.data.pickup_date).format(
                       "MMM DD, YYYY hh:mm A"
@@ -885,8 +934,53 @@ class Trip extends Component<Props> {
               submitText={strings.submit}
               cancelText={strings.cancel}
             ></DialogInput>
+            {this.state.data.status == 4 && (
+              <Dialog
+                visible={this.state?.confiramtion_modal}
+                width="90%"
+                animationDuration={100}
+                dialogTitle={<DialogTitle title="Cash received?" />}
+                dialogAnimation={
+                  new SlideAnimation({
+                    slideFrom: "bottom",
+                  })
+                }
+                footer={
+                  <DialogFooter>
+                    <DialogButton
+                      text="Yes"
+                      textStyle={{ fontSize: 16, color: colors.theme_fg_two }}
+                      onPress={() => {
+                        this.setState({ confiramtion_modal: false });
+                        this.status_changed("yes");
+                      }}
+                    />
+                    <DialogButton
+                      text="No"
+                      textStyle={{ fontSize: 16, color: colors.theme_fg_two }}
+                      onPress={() => {
+                        this.setState({ confiramtion_modal: false });
+                        this.status_changed("no");
+                      }}
+                    />
+                  </DialogFooter>
+                }
+                onTouchOutside={() => {
+                  this.setState({ Dialog_popup: false });
+                }}
+              ></Dialog>
+            )}
+            {
+              <View style={{ position: "absolute", right: 30, bottom: 220 }}>
+                <Image
+                  source={{ uri: support_icon }}
+                  style={styles.chat_icon}
+                  onPress={() => this.call_support(this.state.support_contact)}
+                />
+              </View>
+            }
             {this.state.data.status <= 2 && (
-              <View style={{ position: "absolute", right: 30, bottom: 200 }}>
+              <View style={{ position: "absolute", right: 30, bottom: 220 }}>
                 <FontAwesome
                   name="phone"
                   size={55}
@@ -898,7 +992,7 @@ class Trip extends Component<Props> {
               </View>
             )}
             {this.state.data.status <= 2 && (
-              <View style={{ position: "absolute", right: 30, bottom: 150 }}>
+              <View style={{ position: "absolute", right: 30, bottom: 170 }}>
                 <FontAwesome
                   name="comments"
                   size={55}
@@ -908,7 +1002,7 @@ class Trip extends Component<Props> {
               </View>
             )}
             {this.state.data.status <= 2 && (
-              <View style={{ position: "absolute", right: 30, bottom: 100 }}>
+              <View style={{ position: "absolute", right: 30, bottom: 120 }}>
                 <FontAwesome
                   name="window-close"
                   size={55}
@@ -919,6 +1013,80 @@ class Trip extends Component<Props> {
             )}
           </ScrollView>
         )}
+        <View
+          style={{
+            backgroundColor: colors.theme_bg_three,
+            padding: 10,
+
+            width: "94%",
+            marginLeft: "2%",
+            marginRight: "2%",
+            borderRadius: 10,
+            paddingBottom: 60,
+          }}
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              alignSelf: "center",
+              fontFamily: font_description,
+              color: colors.theme_fg_two,
+
+              fontSize: 14,
+            }}
+          >
+            Customer Details
+          </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 4,
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: font_description,
+                color: colors.theme_fg_two,
+
+                fontSize: 14,
+              }}
+            >
+              Name: {this.state.data?.customer_name}
+            </Text>
+            <Text
+              style={{
+                fontFamily: font_description,
+                color: colors.theme_fg_two,
+
+                fontSize: 14,
+              }}
+            >
+              Phone: {this.state.data?.customer_phone_number}
+            </Text>
+          </View>
+          <Text
+            style={{
+              fontFamily: font_description,
+              color: colors.theme_fg_two,
+              marginTop: 3,
+              fontSize: 14,
+            }}
+          >
+            Rateings:
+            <StarRating
+              disabled={true}
+              maxStars={5}
+              starSize={10}
+              rating={this.state.data?.customer_rating}
+              starStyle={{
+                paddingRight: 5,
+                color: colors.star_rating,
+                paddingTop: 2,
+              }}
+            />
+          </Text>
+        </View>
         {this.state.data && this.state.data.status < 5 && (
           <TouchableOpacity
             activeOpacity={1}

@@ -296,7 +296,7 @@ export default class Splash extends Component<Props> {
         }}
       >
         <StatusBar />
-        <Image style={styles.image} source={logo} />
+        <Image style={styles.image} source={logo} resizeMode={"contain"} />
       </View>
     );
   }

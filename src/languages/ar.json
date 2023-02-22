@@ -79,6 +79,8 @@
   //Duty
   "off_duty":"خارج الخدمه",
   "on_duty":"في الخدمة",
+  "intown":"In Town",
+  "outtown":"Out Town",
   "bookings_count":"عدد الحجوزات",
   "ride_earnings":"أرباح الركوب",
   "We_needs_to_Access_your_location_for_tracking":"نحن بحاجة للوصول إلى موقعك للتتبع",
