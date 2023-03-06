@@ -77,9 +77,11 @@ class Login extends Component<Props> {
     //     from: "login",
     //   });
     // }
+     if (data?.is_available == 1) {
     this.props.navigation.navigate("Password", {
       phone_number: "+91" + this.state.phone_number,
     });
+  }
   }
 
   async check_phone(phone_with_code) {

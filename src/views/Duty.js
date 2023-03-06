@@ -206,10 +206,17 @@ export default class Duty extends Component<props> {
         )
         .on("value", (snapshot) => {
           if (this.state._isMounted) {
+            var status = 1;
             if (
-              snapshot.val().booking.booking_status == 1 &&
-              snapshot.val().online_status == 1
+              snapshot.val().booking?.booking_status &&
+              snapshot.val().booking?.booking_status != null &&
+              snapshot.val().booking?.booking_status != undefined
             ) {
+              status = snapshot.val().booking.booking_status;
+            } else {
+              status = 1;
+            }
+            if (status == 1 && snapshot.val().online_status == 1) {
               this.setState({ _isMounted: false });
               this.props.navigation.navigate("BookingRequest", {
                 customer_name: snapshot.val().booking.customer_name,
@@ -221,7 +228,7 @@ export default class Duty extends Component<props> {
                 trip_type: snapshot.val().booking.trip_type,
               });
             } else if (
-              snapshot.val()?.booking.booking_status == 2 &&
+              status == 2 &&
               snapshot.val().online_status == 1 &&
               snapshot.val().booking.trip_type != "Shared"
             ) {
@@ -231,7 +238,7 @@ export default class Duty extends Component<props> {
                 customer_name: snapshot.val().booking.customer_name,
               });
             } else if (
-              snapshot.val()?.booking.booking_status == 2 &&
+              status == 2 &&
               snapshot.val().online_status == 1 &&
               snapshot.val().booking.trip_type == "Shared"
             ) {
